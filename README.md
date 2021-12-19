@@ -9,7 +9,7 @@
 - Bot will reply language that used in your message.
 
 ## Deploy your own bot here.
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/TinuraD/Chat-Bot.git)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/fjgaming212/Chat-Bot.git)
 
 ## Credits
 - [Pyrogram](https://github.com/pyrogram/pyrogram)
