@@ -33,6 +33,7 @@ bot = Client("Chatbot",
                 api_hash=getenv("API_HASH"))
 
 tr = Translator()
+LANGUAGE = "id"
 
 @bot.on_message(filters.command("start"))
 async def startmsg(_, message):
@@ -54,7 +55,7 @@ async def chatbot(_, message):
     lang = tr.translate(message.text).src
     trtoen = (message.text if lang=="id" else tr.translate(message.text, dest="id").text).replace(" ", "%20")
     text = trtoen.replace(" ", "%20") if len(message.text) < 2 else trtoen
-    affiliateplus = requests.get(f"https://api.affiliateplus.xyz/api/chatbot?message={text}&botname=AI%20Chat%20Bot&ownername=Tinura%20Dinith&user=1")
+    affiliateplus = requests.get(f"https://api-tede.herokuapp.com/api/chatbot?message={text}")
     textmsg = (affiliateplus.json()["message"])
     msg = tr.translate(textmsg, src='id', dest=lang)
     await message.reply_text(msg.text)
