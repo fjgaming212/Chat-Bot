@@ -55,7 +55,7 @@ async def chatbot(_, message):
     lang = tr.translate(message.text).src
     trtoen = (message.text if lang=="id" else tr.translate(message.text, dest="id").text).replace(" ", "%20")
     text = trtoen.replace(" ", "%20") if len(message.text) < 2 else trtoen
-    affiliateplus = requests.get(f"https://api-tede.herokuapp.com/api/chatbot?message={text}")
+    affiliateplus = requests.get(f"https://api-tede.herokuapp.com/api/chatbot?message={message}")
     textmsg = (affiliateplus.json()["message"])
     msg = tr.translate(textmsg, src='id', dest=lang)
     await message.reply_text(msg.text)
